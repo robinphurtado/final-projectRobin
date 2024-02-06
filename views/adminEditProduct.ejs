@@ -1,0 +1,82 @@
+<%- include("partials/headerA.ejs") %>
+  <body class="aBody">
+     <nav>
+         <button type="button" name="addProducts" id="addProducts" class="btn btn-primary"
+    onclick="window.location.href='/admin/addProducts';"> Add Products</button>
+       <button type="button" name="viewProducts" id="viewProducts" class="btn btn-primary"
+    onclick="window.location.href='/admin/viewProducts';"> View Products</button>
+       <button type="button" name="etc" id="etc" class="btn btn-primary"
+     onclick="window.location.href='/admin/viewComments';"> View Comments </button>
+    </nav>
+    <br><br>
+    <form class="productForm" method="POST" action="/admin/editProduct?productId=<%=currProducts[0].productId%>">
+
+      <input type="hidden" name="prodIdNum" value="<%=currProducts[0].productId%>">
+
+      Product Information:
+      <input type="text" class="textbox"name="prodInfo" value="<%=currProducts[0].productInfo%>">
+      <br><br>
+
+      Quantity Available:
+      <input type="text" class="textbox"name="prodQuantity" value="<%=currProducts[0].quantity%>">
+      <br><br>
+
+      Image Link:
+      <input type="text" class="textbox"name="prodPic" value="<%=currProducts[0].image%>">
+      <br><br>
+
+      Base Price:
+      <input type="text" class="textbox"name="prodPrice" value="<%=currProducts[0].basePrice%>">
+      <br><br>
+
+      Upgrade Option:
+      <input type="text" class="textbox"name="prodExtra" value="<%=currProducts[0].optionalAddOn%>">
+      <br><br>
+
+      Upgrade Price:
+      <input type="text" class="textbox"name="prodXPrice" value="<%=currProducts[0].addOnPrice%>">
+      <br><br>
+
+      Product Type: <select name="prodType" class="ddMenu" value="<%=types[0].productTypeId%>">
+        
+   <% for (s of types) { %>
+       
+            <option value="<%=s.productTypeId%>"
+           <% if (types[0].productTypeId == s.productTypeId) { %>
+          selected 
+        <% } %>
+          >
+          <%=s.productTypeName%> 
+        </option>
+            <% } %>
+
+     </select><br><br>
+
+    Product Brand: <select name="prodBrand" class="ddMenu" value="<%=brands[0].productBrandId%>">
+        
+   <% for (b of brands) { %>
+       
+            <option value="<%=b.productBrandId%>"
+           <% if (brands[0].productBrandeId == b.productBrandId) { %>
+          selected 
+        <% } %>
+          >
+          <%=b.productBrandName%> 
+        </option>
+            <% } %>
+
+     </select><br><br>
+
+        
+    
+      
+      <button class="edit">UPDATE PRODUCT</button>
+    </form>
+
+    <% if (typeof message != "undefined"){ %>
+  		   <h3><%=message%></h3>
+ <% } %>
+   
+   <%- include("partials/adminLogout.ejs") %>
+   
+  </body>

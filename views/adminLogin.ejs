@@ -1,0 +1,26 @@
+<%- include("partials/headerA.ejs") %>
+  <body class="aBody">
+    <div id="adminBody">
+    <input type="hidden" id="aIdNum" value="<%=listings[0].adminId%>">
+    <input type="hidden" id="aName" value="<%=listings[0].adminName%>">
+    <input type="hidden" id="aEmail" value="<%=listings[0].adminEmail%>">
+    <input type="hidden" id="aPass" value="<%=listings[0].adminPassword%>">
+<form autocomplete="off" method="POST" >   
+ <input type="text" class="textbox" name="adminIdNum" id="adminIdNum" placeholder="Admin ID Number"><br><br>
+<input type="text" class="textbox" name="adminName" id="adminName" placeholder="Admin Name"><br><br>
+<input type="text" class="textbox" name="adminEmailAddr" id="adminEmailAddr" placeholder="Admin Email"><br><br>
+<input type="password" class="textbox" name="adminPass" id="adminPass" placeholder="Admin Password"><br><br>
+   
+    
+  <button type="submit" id="submission" class="btn btn-primary"> Submit </button>
+    </div>
+</form> 
+
+    <br>
+
+
+  <% if (typeof error != "undefined" ) { %>
+     <h3 id="validationFdbk" class="bg-danger text-white"><%= error %>   </h3> 
+  <% } else { %>
+   <% } %>
+    </body>

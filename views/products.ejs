@@ -1,0 +1,45 @@
+<%- include("partials/header.ejs") %>
+   <form class="searchBar" action="/products?productTypeId=<%=types[0].productTypeId%>">
+    Search by Product Type: <br>
+   <select name="productTypeId">
+         <% for (type of types) { %>
+           <option value="<%=type.productTypeId%>">
+         <%=type.productTypeName%>
+           </option>
+            <% } %>
+            </select><br><br>
+              <button class="btn btn-success"> Search Products </button>
+            </form><br><br>
+ <img src="<%=listings[0].icon%>" class="indexIcons" width="100"><br><br>
+  
+     <% for (i of listings) { %>
+
+      <a href="#" id="<%=i.productId%>" class="someProduct"><strong><%= i.productBrandName %> <%= i.productInfo %></strong></a><br>
+ <img src="<%= i.image %>" width="400"> <br>      
+        <br><br>
+      <% } %>
+
+  <%- include("partials/footer.ejs") %>
+
+    <div id="productModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="mTitle" class="modal-title"><strong>PRODUCT DETAILS</strong></h5>
+      </div>
+      <div id="mBody" class="modal-body">
+        <div id="productDetails"></div>
+        <hr>
+        <h5> <strong>PRODUCT REVIEWS</strong> </h5><br>
+        <div id="commentInfo"></div>
+      </div>
+      <div id="mFooter" class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-info"> Add to Cart </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="/js/scripts.js"></script>
+  </body>

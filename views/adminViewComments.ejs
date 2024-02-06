@@ -1,0 +1,16 @@
+<%- include("partials/headerA.ejs") %>
+  <body class ="aProdList">
+    <br>
+    <nav>
+         <button type="button" name="addProducts" id="addProducts" class="btn btn-primary"
+    onclick="window.location.href='/admin/addProducts';"> Add Products</button>
+       <button type="button" name="viewProducts" id="viewProducts" class="btn btn-primary"
+    onclick="window.location.href='/admin/viewProducts';"> View Products</button><br><br>
+    </nav>
+     <% for (i=0; i < listings.length; i++) { %>
+       <br> <h3> <%=listings[i].comment%> </h3> <p>-<i><%=listings[i].author%> on <%=listings[i].productBrandName%> <%=listings[i].productInfo%> </i> </p>
+           <button class = "del"
+       onclick="window.location.href='/admin/removeComment?commentId=<%=listings[i].commentId%>';"> DELETE </button><br>
+    <% } %><br>
+<%- include("partials/adminLogout.ejs") %>
+     </body>

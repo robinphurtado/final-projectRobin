@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #331D2C;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 400px;
+      width: 50%;
+      margin: auto;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      background-color: #28C3D4;
+      color: #F4F2DE;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #errorMessage {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .custom-footer {
+      background-color: #E5E5CB;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .custom-icon {
+      font-size: 20px;
+      margin: 5px;
+      color: #333;
+    }
+
+    .custom-icon:hover {
+      color: #F9F5F6; 
+    }
+
+    .sign-up-button {
+      background-color: #83E85A;
+      margin-top: 20px;
+    }
+
+    .sign-up-button:hover {
+      background-color: #006080;
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/header.ejs') %>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit">Login</button> <br> <br>
+    <button class="sign-up" type="button">Sign Up</button>
+    </form>
+    <p id="errorMessage"></p>
+  </div>
+
+  <footer class="custom-footer">
+    <div class="social-icons">
+      <i class="fa fa-facebook custom-icon"></i>
+      <i class="fa fa-instagram custom-icon"></i>
+      <i class="fa fa-snapchat custom-icon"></i>
+      <i class="fa fa-pinterest-p custom-icon"></i>
+      <i class="fa fa-twitter custom-icon"></i>
+      <i class="fa fa-linkedin custom-icon"></i>
+    </div>
+  </footer>
+<script src="/script/script.js"></script>
+    <script>
+      const signUpButton = document.querySelector(".sign-up");
+        signUpButton.addEventListener("click", function() {
+          window.location.href = "/signup";
+        
+    });
+    </script>
+</body>
+</html>

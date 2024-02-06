@@ -1,0 +1,62 @@
+<%- include("partials/header.ejs") %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <form class="searchBar" action="/products?productTypeId=<%=types[0].productTypeId%>">
+    Search by Product Type: <br>
+   <select name="productTypeId">
+         <% for (type of types) { %>
+           <option value="<%=type.productTypeId%>">
+         <%=type.productTypeName%>
+           </option>
+            <% } %>
+            </select><br><br>
+              <button class="btn btn-success"> Search Products </button>
+            </form><br><br>
+
+  <div class="slideshow-container">
+    
+    <div class="mySlides">
+      <img src="https://www.digitaltrends.com/wp-content/uploads/2018/10/samsung-q900r-85-inch-8k-qled-tv-review-9.jpg" class="slide-image">
+    </div>
+
+   
+    <div class="mySlides">
+      <img src="https://content.abt.com/image.php/hp-laptop-14-EM0157NR-front-left.jpg?image=/images/products/BDP_Images/hp-laptop-14-EM0157NR-front-left.jpg" class="slide-image">
+    </div>
+
+    <div class="mySlides">
+      <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500476cv1d.jpg" class="slide-image">
+    </div>
+
+    <div class="mySlides">
+      <img src="https://m-cdn.phonearena.com/images/article/138513-wide-two_1200/Samsungs-AirPods-Pro-rivaling-Galaxy-Buds-2-are-almost-too-cheap-to-be-true-today-only.jpg" class="slide-image">
+    </div>
+
+    <div class="mySlides">
+      <img src="https://media.wired.com/photos/59e9524358c14975689668bc/master/w_2560%2Cc_limit/BoseQCHeadphonesTA.jpg" class="slide-image">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+    <br><br>
+   
+  <div class="slides1">
+  <img src="https://icons.veryicon.com/png/o/internet--web/line-style-digital-correlation/tv-27.png" class="indexIcons">
+  <img src="https://icons.veryicon.com/png/o/miscellaneous/template-1/laptop-36.png" class="indexIcons">
+  <img src="https://icons.veryicon.com/png/o/miscellaneous/template-1/headphone-20.png" class="indexIcons">
+</div>
+
+
+<br>
+
+    <div>
+      <button id="toAdminPage"> Admin Page </button>
+    </div>
+  <script src="js/indexScript.js"></script>
+  </body>
+ 
+<%- include("partials/footer.ejs") %>
+  </html>

@@ -1,0 +1,72 @@
+<%- include("partials/headerA.ejs") %>
+  <body class="aBody">
+    <nav>
+       <button type="button" name="viewProducts" id="viewProducts" class="btn btn-primary"
+    onclick="window.location.href='/admin/viewProducts';"> View Products</button>
+      <button type="button" name="etc" id="etc" class="btn btn-primary"
+     onclick="window.location.href='/admin/viewComments';"> View Comments </button>
+    </nav>
+    <br><br>
+    <form class="productForm" method="POST" action="/admin/addProducts">
+
+
+      Product Information:
+      <input type="text" class="textbox"name="prodInfo">
+      <br><br>
+
+      Quantity Available:
+      <input type="text" class="textbox"name="prodQuantity">
+      <br><br>
+
+      Image Link:
+      <input type="text" class="textbox"name="prodPic">
+      <br><br>
+
+      Base Price:
+      <input type="text" class="textbox"name="prodPrice">
+      <br><br>
+
+      Upgrade Option:
+      <input type="text" class="textbox"name="prodExtra">
+      <br><br>
+
+      Upgrade Price:
+      <input type="text" class="textbox"name="prodXPrice">
+      <br><br>
+
+      Product Type: <select name="prodType" class="ddMenu">
+        
+   <% for (s of types) { %>
+       
+            <option value="<%=s.productTypeId%>">
+          <%=s.productTypeName%> 
+        </option>
+            <% } %>
+
+     </select><br><br>
+
+    Product Brand: <select name="prodBrand" class="ddMenu">
+        
+   <% for (b of brands) { %>
+       
+            <option value="<%=b.productBrandId%>">
+  
+          <%=b.productBrandName%> 
+        </option>
+            <% } %>
+
+     </select><br><br>
+
+        
+    
+      
+      <button class="add">ADD PRODUCT</button>
+    </form>
+
+    <% if (typeof message != "undefined"){ %>
+  		   <h3><%=message%></h3>
+ <% } %>
+
+<%- include("partials/adminLogout.ejs") %>
+   
+  </body>

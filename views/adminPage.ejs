@@ -1,0 +1,17 @@
+<%- include("partials/headerA.ejs") %>
+  <body class="aBody">
+    <div id="adminBody">
+
+      <h2><strong>Products</strong></h2>
+
+  <button type="button" name="viewProducts" id="viewProducts" class="btn btn-primary"
+    onclick="window.location.href='/admin/viewProducts';">View</button>
+  <button type="button" name="addProducts" id="addProducts" class="btn btn-primary"
+    onclick="window.location.href='/admin/addProducts';">Add</button><br><br>
+      <h2><strong>Product Reviews</strong></h2>
+  <button type="button" name="etc" id="etc" class="btn btn-primary"
+     onclick="window.location.href='/admin/viewComments';">View</button>
+    </div>
+    
+<%- include("partials/adminLogout.ejs") %>
+    </body>

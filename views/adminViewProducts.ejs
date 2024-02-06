@@ -1,0 +1,30 @@
+<%- include("partials/headerA.ejs") %>
+  <body class ="aProdList">
+    <br>
+    <nav>
+         <button type="button" name="addProducts" id="addProducts" class="btn btn-primary"
+    onclick="window.location.href='/admin/addProducts';"> Add Products</button>
+      <button type="button" name="etc" id="etc" class="btn btn-primary"
+     onclick="window.location.href='/admin/viewComments';"> View Comments </button>
+    </nav>
+    <br><br>
+  <% for (i=0; i < listings.length; i++) { %>
+    <div class="myList">
+     <div class="lhs">
+
+    <button class="edit"
+       onclick="window.location.href='/admin/editProduct?productId=<%=listings[i].productId%>';">UPDATE</button>
+
+     </div>
+
+     <div class="middle">
+    <p> <%=listings[i].productBrandName%> <%=listings[i].productInfo%> </p> </div>
+     
+<div class="rhs">
+     <button class = "del"
+       onclick="window.location.href='/admin/removeProduct?productId=<%=listings[i].productId%>';"> DELETE </button>
+
+</div></div>
+     <% } %>
+<%- include("partials/adminLogout.ejs") %>
+     </body>
